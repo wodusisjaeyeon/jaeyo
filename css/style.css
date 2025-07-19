@@ -29,7 +29,7 @@
     --color-primary: rgb(248, 255, 80);    /* 주요 강조 색상 (노랑) */
     --color-link: rgb(255, 0, 0);          /* 링크 색상 (빨강) */
     --color-text-primary: rgb(0, 0, 0);    /* 기본 텍스트 색상 (검정) */
-    --color-background-light: rgb(195, 195, 195); /* 밝은 배경색 (흰색) */
+    --color-background-light: rgb(255, 255, 255); /* 밝은 배경색 (흰색) */
     
     /* RGB 버전 (알파 투명도 사용 시) */
     --color-primary-rgb: 248, 255, 80;
@@ -66,6 +66,9 @@
     /* 라인 높이 (Line Height Variables) */
     --line-height-default: 2em; /* 기본 라인 높이 */
     --line-height-small: 1.7;    /* 작은 텍스트 라인 높이 (채팅 메시지 등) */
+
+    /* 내비게이션 항목 높이 변수 추가 */
+    --nav-item-fixed-height: 3rem; /* 내비게이션 항목의 고정 높이 */
 }
 
 /* --- HTML 기본 스타일 (HTML Base Styles) --- */
@@ -208,10 +211,14 @@ a {
     width: 100%; /* 부모(left-panel) 너비에 꽉 차게 */
     margin-bottom: var(--spacing-sm); /* 각 항목 아래 간격 */
     border: var(--stroke); /* 점선 테두리 적용 */
-    padding: var(--spacing-xs) var(--spacing-sm); /* 내부 패딩 */
+    padding: 0 var(--spacing-sm); /* 상하 패딩 제거, 좌우 패딩 유지 */
     box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
     text-align: center; /* 텍스트 중앙 정렬 */
     background-color: var(--color-background-light); /* 배경색 */
+    display: flex; /* 내부 요소 정렬을 위해 Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 (텍스트/단일 요소용) */
+    height: var(--nav-item-fixed-height); /* 고정 높이 적용 */
 }
 
 /* --- 내비게이션 링크 공통 스타일 (HOME, ABOUT) --- */
@@ -221,7 +228,9 @@ a {
     font-weight: bold; /* 글자 두껍게 */
     font-size: 1.1rem; /* 글자 크기 */
     text-decoration: none; /* 밑줄 제거 */
-    padding: var(--spacing-xxs) 0; /* 내부 패딩 */
+    padding: 0; /* 내부 패딩 제거 (부모 Flexbox가 정렬 담당) */
+    line-height: 1; /* 텍스트 높이 조절 */
+    flex-grow: 1; /* 남은 공간 채우도록 확장 (text-align: center와 함께 사용) */
     transition: background-color 0.3s ease; /* 호버 효과 부드럽게 */
 }
 
@@ -235,7 +244,9 @@ a {
     color: var(--color-link); /* 빨간색 적용 */
     font-family: var(--font-primary); /* 폰트 통일 */
     font-size: 1.1rem; /* 글자 크기 통일 */
-    padding: var(--spacing-xxs) 0; /* 내부 패딩 */
+    font-weight: bold; /* <-- 이 줄을 추가하여 볼드체로 만듭니다. */
+    height: 100%; /* 부모 컨테이너 높이에 꽉 차게 */
+    padding: 0 var(--spacing-xxs); /* 내부 패딩 조정 (좌우만) */
     box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
     border: none; /* 기본 테두리 제거 */
     background-color: transparent; /* 배경색 투명 */
@@ -259,7 +270,8 @@ a {
     border: var(--stroke-solid); /* 실선 테두리 */
     box-shadow: var(--shadow-input-inset); /* 내부 그림자 */
     padding: var(--spacing-xs); /* 내부 패딩 조정 */
-    margin-bottom: var(--spacing-xxs); /* 버튼과의 간격 */
+    margin-bottom: 0; /* Search 컨테이너 내에서 마진 제거 */
+    height: 100%; /* 부모 높이에 맞춤 */
 }
 
 /* Button 요소의 추가 스타일 */
@@ -272,6 +284,7 @@ a {
     font-weight: bold;
     box-shadow: var(--shadow-button-raised-outer); /* 버튼 그림자 */
     transition: all 0.2s ease;
+    height: 100%; /* 부모 높이에 맞춤 */
 }
 
 .nav-button-style:hover {
@@ -282,9 +295,11 @@ a {
 /* Search 컨테이너의 flex 조정 (input과 button이 한 줄에 오도록) */
 .search-container {
     display: flex;
-    flex-wrap: wrap; /* 내용이 넘치면 다음 줄로 */
+    align-items: center; /* 내부 요소 수직 중앙 정렬 */
+    flex-wrap: nowrap; /* 내용이 넘치더라도 줄바꿈 하지 않음 */
     gap: var(--spacing-xxs); /* 요소들 사이 간격 */
     padding: var(--spacing-xs) var(--spacing-sm); /* 컨테이너 패딩 조정 */
+    height: var(--nav-item-fixed-height); /* 고정 높이 적용 */
 }
 
 .search-container input,
@@ -302,6 +317,9 @@ a {
 /* Button은 나머지 공간을 차지하도록 */
 .search-container button {
     flex-basis: 25%; /* Button이 나머지 공간을 차지하도록 */
+}
+
+
 
 /* 기존 스타일 아래에 추가 */
 #home-container {
