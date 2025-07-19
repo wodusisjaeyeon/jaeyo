@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             setPanelHeightsMobile(50, 50); // 초기에는 50/50으로 나눕니다.
         } else {
             // 데스크톱 환경: 너비를 뷰포트 너비의 50%로 설정
-            leftPanel.style.width = '50%';
-            rightPanel.style.width = '50%';
+            leftPanel.style.width = '20%';
+            rightPanel.style.width = '80%';
         }
     }
 
