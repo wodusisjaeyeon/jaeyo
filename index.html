@@ -49,62 +49,66 @@
         ></dotlottie-wc>
     </div>
     <!-- 홈피 구조 -->
+
     <div class="container">
-        <div class="left-panel">
-            <nav id="nav">
-                <div id="about-container"> 
-                    <div class="about">ABOUT</div> 
-                </div>
-                <div class="tag-filter-container">
-                    <select id="tag-filter">
-                        <option value="all">All Tags</option>
-                    </select>
-                </div>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="">
-                    <button id="search-button">Search</button>
-                </div>
-            </nav>
+    <div class="left-panel">
+        <nav id="nav">
+            <div id="home-container">
+                <a href="index.html" class="home-button">HOME</a> </div>
+            <div id="about-container"> 
+                <div class="about">ABOUT</div> 
+            </div>
+            <div class="tag-filter-container">
+                <select id="tag-filter">
+                    <option value="all">All Tags</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="">
+                <button id="search-button">Search</button>
+            </div>
+        </nav>
 
-            <ul id="post-list">
-            </ul>
-            <button id="load-more-btn">Load More</button>
+        <ul id="post-list">
+        </ul>
+        <button id="load-more-btn">Load More</button>
 
+    </div>
+    <div class="resizer"></div>
+    <div class="right-panel">
+        <div id="iframe-overlay" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; z-index:100;"></div>
+        <iframe id="content-frame" title="내용" src="main.html"></iframe>
+    </div>
+    <div id="chatroom-container">
+        <div id="chatroom-header">
+            <span id="chatroom-header-title">방명록</span>
+            <span class="chat-button" id="toggle-button"><span class="material-symbols-outlined">expand_content</span></span>
         </div>
-        <div class="resizer"></div>
-        <div class="right-panel">
-            <div id="iframe-overlay" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; z-index:100;"></div>
-            <iframe id="content-frame" title="내용" src="main.html"></iframe>
-        </div>
-        <div id="chatroom-container">
-                <div id="chatroom-header">
-                    <span id="chatroom-header-title">방명록</span>
-                    <span class="chat-button" id="toggle-button"><span class="material-symbols-outlined">expand_content</span></span>
-                </div>
-                <div id="chatroom-content">
-                <div id="chat-screen">
-                        <div id="messages-display">
-                        </div>
-                    </div>
-                </div>
-            <div id="chat-input"><input type="text" name="hp_email" id="hp_email" style="display:none !important; visibility:hidden !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off"> </div>
-                <div class="info">
-                            <input type="text" id="username-input" placeholder="닉네임">
-                            <input type="number" id="age-input" placeholder="나이">
-                            <input type="text" id="location-input" placeholder="지역">
-                </div>
-                <div id="message-input-area">
-                            <input type="text" id="message-input" placeholder="...흔적 남기는 건 정말 재밌어...">
-                            <button id="send-message-button">전송</button>
+        <div id="chatroom-content">
+        <div id="chat-screen">
+                <div id="messages-display">
                 </div>
             </div>
+        </div>
+    <div id="chat-input"><input type="text" name="hp_email" id="hp_email" style="display:none !important; visibility:hidden !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off"> </div>
+        <div class="info">
+                <input type="text" id="username-input" placeholder="닉네임">
+                <input type="number" id="age-input" placeholder="나이">
+                <input type="text" id="location-input" placeholder="지역">
+        </div>
+        <div id="message-input-area">
+                <input type="text" id="message-input" placeholder="...흔적 남기는 건 정말 재밌어...">
+                <button id="send-message-button">전송</button>
+        </div>
     </div>
-    <script type="module" defer src="js/utils.js?v=20250626"></script>
-    <script type="module" defer src="js/postInteractions.js?v=20250626"></script>
-    <script type="module" defer src="js/resizer.js?v=20250626"></script>
-    <script type="module" defer src="js/script.js?v=20250626"></script>
-    <script type="module" defer src="js/chatroom.js?v=20250626"></script> 
-    <script type="module" defer src="js/cursor.js?v=20250626"></script>
+</div>
+<script type="module" defer src="js/utils.js?v=20250626"></script>
+<script type="module" defer src="js/postInteractions.js?v=20250626"></script>
+<script type="module" defer src="js/resizer.js?v=20250626"></script>
+<script type="module" defer src="js/script.js?v=20250626"></script>
+<script type="module" defer src="js/chatroom.js?v=20250626"></script> 
+<script type="module" defer src="js/cursor.js?v=20250626"></script>
+    
 </body>
     
 </html>
