@@ -322,25 +322,3 @@ a {
 
 
 /* 기존 스타일 아래에 추가 */
-#home-container {
-    padding: 0.5rem 0; /* 상하 패딩 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    border-bottom: 1px solid #eee; /* ABOUT 아래 선과 유사하게 */
-    margin-bottom: 1rem; /* ABOUT 위에 간격 */
-}
-
-.home-button {
-    display: block; /* 링크 전체 영역 클릭 가능하도록 */
-    text-decoration: none; /* 밑줄 제거 */
-    color: #ff0000; /* 텍스트 색상 */
-    font-weight: bold; /* 글자 두껍게 */
-    font-size: 1.2rem; /* 글자 크기 */
-    padding: 0.5rem; /* 버튼 내부 패딩 */
-    transition: background-color 0.3s ease; /* 호버 효과 부드럽게 */
-}
-
-.home-button:hover {
-    background-color: #f0f0f0; /* 마우스 오버 시 배경색 변경 */
-}
-    
-}
