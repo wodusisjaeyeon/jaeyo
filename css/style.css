@@ -1,9 +1,9 @@
 /* css/style.css */
 /*
-   이 파일은 웹사이트 전체에 적용되는 전역 스타일을 정의합니다.
-   기본 서체, 색상 팔레트, 여백/간격, 테두리 등
-   재사용되는 공통 속성들을 root 변수로 관리하여 쉽게 변경할 수 있습니다.
-   HTML, Body, 그리고 주요 레이아웃 요소들의 기본 스타일이 포함됩니다.
+    이 파일은 웹사이트 전체에 적용되는 전역 스타일을 정의합니다.
+    기본 서체, 색상 팔레트, 여백/간격, 테두리 등
+    재사용되는 공통 속성들을 root 변수로 관리하여 쉽게 변경할 수 있습니다.
+    HTML, Body, 그리고 주요 레이아웃 요소들의 기본 스타일이 포함됩니다.
 */
 
 /* --- 웹 폰트 정의 (Web Font Definition) --- */
@@ -17,8 +17,8 @@
 
 /* --- Root 변수 (CSS Custom Properties) --- */
 /*
-   웹사이트 전반에 걸쳐 재사용되는 값들을 변수로 정의합니다.
-   여기서 값을 변경하면 해당 변수를 사용하는 모든 요소에 일괄 적용됩니다.
+    웹사이트 전반에 걸쳐 재사용되는 값들을 변수로 정의합니다.
+    여기서 값을 변경하면 해당 변수를 사용하는 모든 요소에 일괄 적용됩니다.
 */
 :root {
     /* 폰트 변수 */
@@ -26,14 +26,14 @@
     --font-size-small: 0.8rem; /* 작은 텍스트 크기 (14px 기준 10.4px) */
     
     /* 색상 팔레트 */
-    --color-primary: rgb(248, 255, 80);   /* 주요 강조 색상 (노랑) */
-    --color-link: rgb(255, 0, 0);       /* 링크 색상 (파랑) */
-    --color-text-primary: rgb(0, 0, 0);   /* 기본 텍스트 색상 (검정) */
-    --color-background-light: rgb(255, 255, 255); /* 밝은 배경색 (회색) */
+    --color-primary: rgb(248, 255, 80);    /* 주요 강조 색상 (노랑) */
+    --color-link: rgb(255, 0, 0);          /* 링크 색상 (빨강) */
+    --color-text-primary: rgb(0, 0, 0);    /* 기본 텍스트 색상 (검정) */
+    --color-background-light: rgb(255, 255, 255); /* 밝은 배경색 (흰색) */
     
     /* RGB 버전 (알파 투명도 사용 시) */
     --color-primary-rgb: 248, 255, 80;
-    --color-link-rgb: 0, 123, 255;   
+    --color-link-rgb: 255, 0, 0; /* 링크 색상 RGB도 빨강으로 통일 */
     --color-text-primary-rgb: 0, 0, 0;
     --color-background-light-rgb: 230, 230, 230;
 
@@ -57,7 +57,7 @@
 
     /* 그림자 변수 (Box Shadow Variables) */
     --button-highlight: #ffffff; /* 버튼 하이라이트 색상 */
-    --button-shadow: #808080;    /* 버튼 그림자 색상 */
+    --button-shadow: #808080;     /* 버튼 그림자 색상 */
     --shadow-button-raised-outer: inset -2px -2px var(--color-background-light), inset 1px 1px var(--color-background-light);
     --shadow-button-raised-inner: inset 2px 2px var(--button-highlight), inset -3px -3px var(--button-shadow), inset 3px 3px var(--color-background-light);
     --shadow-input-inset: inset 0 1px 2px rgba(0,0,0,.4); /* 입력창 내부 그림자 */
@@ -65,7 +65,7 @@
 
     /* 라인 높이 (Line Height Variables) */
     --line-height-default: 2em; /* 기본 라인 높이 */
-    --line-height-small: 1.7;   /* 작은 텍스트 라인 높이 (채팅 메시지 등) */
+    --line-height-small: 1.7;    /* 작은 텍스트 라인 높이 (채팅 메시지 등) */
 }
 
 /* --- HTML 기본 스타일 (HTML Base Styles) --- */
@@ -89,8 +89,8 @@ body {
 
 /* --- 버튼, 선택 박스, 입력창, 텍스트 영역 공통 스타일 (Button, Select, Input, Textarea Common Styles) --- */
 /*
-   모든 버튼, 선택 박스, 입력창, 텍스트 영역에 적용되는
-   기본 스타일을 정의하여 일관성을 유지합니다.
+    모든 버튼, 선택 박스, 입력창, 텍스트 영역에 적용되는
+    기본 스타일을 정의하여 일관성을 유지합니다.
 */
 button, select {
     margin: 0;
@@ -134,7 +134,7 @@ a {
 
 /* --- 메인 컨테이너 (Main Container) --- */
 /*
-   웹사이트의 좌측 패널과 우측 패널을 포함하는 메인 레이아웃 컨테이너입니다.
+    웹사이트의 좌측 패널과 우측 패널을 포함하는 메인 레이아웃 컨테이너입니다.
 */
 .container {
     display: flex; /* 플렉스 박스 사용 */
@@ -146,7 +146,7 @@ a {
 
 /* --- 좌측 패널 (Left Panel) --- */
 /*
-   게시물 목록, 내비게이션, 검색창 등이 위치하는 좌측 영역입니다.
+    게시물 목록, 내비게이션, 검색창 등이 위치하는 좌측 영역입니다.
 */
 .left-panel {
     flex-shrink: 0; /* 공간이 부족해도 줄어들지 않음 */
@@ -154,11 +154,12 @@ a {
     box-sizing: border-box;
     transition: none; /* 모든 전환 효과 비활성화 */
     background-color: var(--color-background-light); /* 밝은 배경색 */
+    padding: var(--spacing-sm); /* 좌측 패널 전체 패딩 */
 }
 
 /* --- 우측 패널 (Right Panel) --- */
 /*
-   아이프레임 콘텐츠가 표시되는 우측 영역입니다.
+    아이프레임 콘텐츠가 표시되는 우측 영역입니다.
 */
 .right-panel {
     flex-grow: 1; /* 사용 가능한 공간을 채우도록 확장 */
@@ -174,8 +175,8 @@ a {
 
 /* --- 크기 조절 바 (Resizer Styles - Desktop) --- */
 /*
-   좌측 및 우측 패널의 크기를 조절하는 바의 스타일입니다.
-   데스크탑 환경에 적용됩니다.
+    좌측 및 우측 패널의 크기를 조절하는 바의 스타일입니다.
+    데스크탑 환경에 적용됩니다.
 */
 .resizer {
     background-color: rgba(var(--color-text-primary-rgb), 0.2); /* 배경색 (투명도 적용) */
@@ -193,11 +194,112 @@ a {
 
 /* --- 콘텐츠 아이프레임 (Content Iframe) --- */
 /*
-   실제 웹 콘텐츠가 로드되는 아이프레임의 스타일입니다.
+    실제 웹 콘텐츠가 로드되는 아이프레임의 스타일입니다.
 */
 #content-frame {
     width: 100%;
     height: 100%;
     box-shadow: none; /* 그림자 제거 */
     overflow-y: auto !important;
+}
+
+/* --- 내비게이션 항목 컨테이너 공통 스타일 (HOME, ABOUT, All Tags, Search) --- */
+.nav-item-container {
+    width: 100%; /* 부모(left-panel) 너비에 꽉 차게 */
+    margin-bottom: var(--spacing-sm); /* 각 항목 아래 간격 */
+    border: var(--stroke); /* 점선 테두리 적용 */
+    padding: var(--spacing-xs) var(--spacing-sm); /* 내부 패딩 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    background-color: var(--color-background-light); /* 배경색 */
+}
+
+/* --- 내비게이션 링크 공통 스타일 (HOME, ABOUT) --- */
+.nav-link {
+    display: block; /* 링크 전체 영역 클릭 가능하도록 */
+    color: var(--color-link); /* 빨간색 적용 */
+    font-weight: bold; /* 글자 두껍게 */
+    font-size: 1.1rem; /* 글자 크기 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: var(--spacing-xxs) 0; /* 내부 패딩 */
+    transition: background-color 0.3s ease; /* 호버 효과 부드럽게 */
+}
+
+.nav-link:hover {
+    background-color: rgba(var(--color-link-rgb), 0.1); /* 호버 시 연한 빨간색 배경 */
+}
+
+/* --- 내비게이션 컨트롤 공통 스타일 (Select, Input, Button) --- */
+.nav-control {
+    width: 100%; /* 부모 컨테이너 너비에 꽉 차게 */
+    color: var(--color-link); /* 빨간색 적용 */
+    font-family: var(--font-primary); /* 폰트 통일 */
+    font-size: 1.1rem; /* 글자 크기 통일 */
+    padding: var(--spacing-xxs) 0; /* 내부 패딩 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    border: none; /* 기본 테두리 제거 */
+    background-color: transparent; /* 배경색 투명 */
+    outline: none; /* 포커스 아웃라인 제거 */
+}
+
+/* Select 요소의 추가 스타일 */
+#tag-filter {
+    cursor: pointer;
+    /* 드롭다운 화살표 커스텀 (선택 사항) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5rem;
+    padding-right: 2rem; /* 화살표 공간 확보 */
+}
+
+/* Input 요소의 추가 스타일 */
+#search-input {
+    background-color: var(--color-background-light); /* Input 배경색 */
+    border: var(--stroke-solid); /* 실선 테두리 */
+    box-shadow: var(--shadow-input-inset); /* 내부 그림자 */
+    padding: var(--spacing-xs); /* 내부 패딩 조정 */
+    margin-bottom: var(--spacing-xxs); /* 버튼과의 간격 */
+}
+
+/* Button 요소의 추가 스타일 */
+.nav-button-style {
+    background-color: var(--color-primary); /* 버튼 배경색 (노랑) */
+    color: var(--color-text-primary); /* 버튼 텍스트 색상 (검정) */
+    border: var(--stroke-solid); /* 실선 테두리 */
+    padding: var(--spacing-xs) var(--spacing-sm); /* 버튼 패딩 */
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: var(--shadow-button-raised-outer); /* 버튼 그림자 */
+    transition: all 0.2s ease;
+}
+
+.nav-button-style:hover {
+    background-color: var(--color-primary); /* 호버 시 배경색 유지 또는 변경 */
+    box-shadow: var(--shadow-button-raised-inner); /* 호버 시 그림자 변경 */
+}
+
+/* Search 컨테이너의 flex 조정 (input과 button이 한 줄에 오도록) */
+.search-container {
+    display: flex;
+    flex-wrap: wrap; /* 내용이 넘치면 다음 줄로 */
+    gap: var(--spacing-xxs); /* 요소들 사이 간격 */
+    padding: var(--spacing-xs) var(--spacing-sm); /* 컨테이너 패딩 조정 */
+}
+
+.search-container input,
+.search-container button {
+    flex-grow: 1; /* 남은 공간 채우도록 확장 */
+    flex-basis: 0; /* 기본 크기 0으로 설정하여 flex-grow가 잘 작동하도록 */
+    min-width: 0; /* 최소 너비 설정 */
+}
+
+/* Input은 좀 더 많은 공간을 차지하도록 */
+.search-container input {
+    flex-basis: 70%; /* Input이 더 많은 공간을 차지하도록 */
+}
+
+/* Button은 나머지 공간을 차지하도록 */
+.search-container button {
+    flex-basis: 25%; /* Button이 나머지 공간을 차지하도록 */
 }
